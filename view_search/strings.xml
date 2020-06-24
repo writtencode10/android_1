@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">View3</string>
+    <string-array name="Country">
+        <item>USA</item>
+        <item>India</item>
+        <item>Bangladesh</item>
+        <item>Australia</item>
+        <item>Swedan</item>
+        <item>Swizerland</item>
+    </string-array>
+</resources>

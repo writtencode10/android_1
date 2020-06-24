@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ExpandableList</string>
+    <string-array name="Country">
+        <item>USA</item>
+        <item>India</item>
+        <item>Bangladesh</item>
+        <item>Australia</item>
+        <item>Swedan</item>
+        <item>Swizerland</item>
+    </string-array>
+    <string-array name="Countrydetaails">
+        <item>USA loves pussy</item>
+        <item>India loves dick</item>
+        <item>Bangladesh loves pusssy</item>
+        <item>Australia loves dick</item>
+        <item>Swedan loves pussy</item>
+        <item>Swizerland loves pussy</item>
+    </string-array>
+</resources>
