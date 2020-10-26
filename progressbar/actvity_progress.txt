@@ -1,0 +1,43 @@
+package com.example.progressbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
+
+public class MainActivity extends AppCompatActivity {
+    private ProgressBar progressBar1;
+    int progress;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_main);
+        progressBar1=findViewById(R.id.prog1);
+        Thread thread1=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                doWork();
+            }
+        });
+        thread1.start();
+    }
+    private void doWork()
+    {
+        for (progress=10;progress<=100;progress=progress+10)
+        {
+            try {
+                Thread.sleep(1000);
+                progressBar1.setProgress(progress);
+            }catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+    }
+}
+

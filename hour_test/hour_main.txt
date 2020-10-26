@@ -1,0 +1,43 @@
+package com.example.testux;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.TimePickerDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.TimePicker;
+
+public class MainActivity extends AppCompatActivity {
+    private TimePickerDialog tpd1;
+    private Button bn1;
+    private TextView tv1;
+    int currentHour,currentMinute;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        bn1=findViewById(R.id.bn1);
+        tv1=findViewById(R.id.tv1);
+        TimePicker tm1=new TimePicker(this);
+        currentHour=tm1.getCurrentHour();
+        currentMinute=tm1.getChildCount();
+        bn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //String time=tm1.getCurrentHour()+" : "+tm1.getCurrentMinute();
+                tpd1=new TimePickerDialog(MainActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        tv1.setText(hourOfDay+" : "+minute);
+                    }
+                },currentHour,currentMinute,true);
+
+                tpd1.show();
+                //tv1.setText(time);
+            }
+        });
+    }
+}
+
